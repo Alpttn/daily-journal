@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="journal.css">
+</head>
+
+<body>
+    <h1>Daily Journal</h1>
+    <form action="">
+        <!-- date entry -->
+        <fieldset>
+            <label for="journalDate">Date of entry</label>
+            <input type="date" name="journalDate" id="journalDate">
+        </fieldset>
+        <!-- concepts covered input -->
+        <fieldset>
+            <label for="Concepts Covered">Concepts Covered Menu</label>
+            <input list="concepts">
+            <datalist id="concepts">
+                <option value="HTML">
+                <option value="CSS">
+                <option value="JavaScript">
+                <option value="C#">
+                <option value="OTHER">
+            </datalist>
+        </fieldset>
+
+        <!-- journal entry input -->
+        <fieldset>
+            <label for="journalEntry">Journal Entry</label>
+            <textarea rows="4" cols="50">
+                        </textarea>
+        </fieldset>
+
+        <!-- mood for the day -->
+        <fieldset>
+            <select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </fieldset>
+
+
+
+
+    </form>
+
+</body>
+
+</html>

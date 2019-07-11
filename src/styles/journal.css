@@ -1,8 +1,18 @@
 
 /* background image for body */
 .dailyJournal-body {
-    background-image: url(https://i.pinimg.com/originals/8b/53/72/8b5372e134386439e926fc7bdc8d956c.jpg)
+    background-image: url(beverage-blank-blank-space-414691\ \(2\).jpg);
 }
+
+.dailyJournal-section {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 12%;
+    margin-left: 18%;
+    
+}
+
 
 /* flex direction for each form input */
 .dateEntryInput {

@@ -37,33 +37,33 @@ console.log(journalEntryLog)
 
 
 // make a function that returns a journal entry component in html string
-const makeJournalEntryComponent = (journalEntry) => {
-    return `<section>
-    <h3>${journalEntry.titleOfEntry}</h3>
-    <p>${journalEntry.entryText}</p>
-    <p>${journalEntry.currentMood}</p>
-    <p>${journalEntry.dateOfEntry}</p>
-    </section>
-    `
-}
+// const makeJournalEntryComponent = (journalEntry) => {
+//     return `<section>
+//     <h3>${journalEntry.titleOfEntry}</h3>
+//     <p>${journalEntry.entryText}</p>
+//     <p>${journalEntry.currentMood}</p>
+//     <p>${journalEntry.dateOfEntry}</p>
+//     </section>
+//     `
+// }
 
-const renderJournalEntries = (entries) => {
-     entries.forEach(journalEntry => {
-        const journalEntryComponent = makeJournalEntryComponent(journalEntry);
-        const whereToPlaceIt = document.querySelector(".entryLog")
-        whereToPlaceIt.innerHTML += journalEntryComponent
-    });
-}
-
-
+// const renderJournalEntries = (entries) => {
+//      entries.forEach(journalEntry => {
+//         const journalEntryComponent = makeJournalEntryComponent(journalEntry);
+//         const whereToPlaceIt = document.querySelector(".entryLog")
+//         whereToPlaceIt.innerHTML += journalEntryComponent
+//     });
+// }
 
 
-const dailyJournalFetch = () => {
-    fetch("http://localhost:3000/entries")
-        .then(response => response.json())
-        .then(entries => {
-            renderJournalEntries(entries)
-        })
-}
+
+
+// const dailyJournalFetch = () => {
+//     fetch("http://localhost:3000/entries")
+//         .then(response => response.json())
+//         .then(entries => {
+//             renderJournalEntries(entries)
+//         })
+// }
 
 dailyJournalFetch()

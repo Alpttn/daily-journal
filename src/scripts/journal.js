@@ -65,5 +65,14 @@ console.log(journalEntryLog)
 //             renderJournalEntries(entries)
 //         })
 // }
+/*
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
 
-dailyJournalFetch()
+    Change the fake variable names below to what they should be
+    to get the data and display it.
+*/
+API.dailyJournalFetch().then(entries => {
+    renderJournalEntries(entries)
+})
+

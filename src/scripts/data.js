@@ -1,7 +1,7 @@
-const dailyJournalFetch = () => {
-    fetch("http://localhost:3000/entries")
-        .then(response => response.json())
-        .then(entries => {
-            renderJournalEntries(entries)
-        })
+const API = {
+    dailyJournalFetch() {
+        return fetch("http://localhost:3000/entries")
+            .then(response => response.json())
+    },
 }
+

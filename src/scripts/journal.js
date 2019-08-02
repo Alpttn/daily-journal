@@ -33,3 +33,26 @@ const journalEntry3 = {
 // then console.log so I could see it displayed in the console.
 journalEntryLog.push(journalEntry2, journalEntry3)
 console.log(journalEntryLog)
+
+
+// make a function that returns a journal entry component in html string
+const makeJournalEntryComponent = (journalEntry) => {
+    return `<section>
+    <h3>${journalEntry.titleOfEntry}</h3>
+    <p>${journalEntry.entryText}</p>
+    <p>${journalEntry.currentMood}</p>
+    <p>${journalEntry.dateOfEntry}</p>
+    </section>
+    `
+}
+
+const renderJournalEntries = (journalEntryLog) => {
+
+    journalEntryLog.forEach(journalEntry => {
+        const journalEntryComponent = makeJournalEntryComponent(journalEntry);
+        const whereToPlaceIt = document.querySelector(".entryLog")
+        whereToPlaceIt.innerHTML += journalEntryComponent
+    });
+}
+
+renderJournalEntries(journalEntryLog);

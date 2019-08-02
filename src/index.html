@@ -11,63 +11,67 @@
 
 <body class="dailyJournal-body">
     <section class="dailyJournal-section">
-    <h1 class="header-dailyJournal">Daily Journal</h1>
+        <h1 class="header-dailyJournal">Daily Journal</h1>
 
-    <form action="" class="dailyJournal-form">
-        <!-- date entry -->
-        <fieldset class="dateEntryInput">
-            <label for="journalDate">Date of entry</label>
-            <input type="date" name="journalDate" id="journalDate">
-        </fieldset>
-        <!-- concepts covered input -->
-        <fieldset class="conceptsCoveredInput">
-            <label for="Concepts Covered">Concepts Covered Menu</label>
-            <input list="concepts">
-            <datalist id="concepts">
-                <option value="HTML">
-                <option value="CSS">
-                <option value="JavaScript">
-                <option value="Group Project">
-                <option value="C#">
-                <option value="OTHER">
-            </datalist>
-        </fieldset>
-        <!-- journal entry input -->
-        <fieldset class="journalEntryInput">
-            <label for="journalEntry">Journal Entry</label>
-            <textarea rows="4" cols="50">
+        <form action="" class="dailyJournal-form">
+            <!-- date entry -->
+            <fieldset class="dateEntryInput">
+                <label for="journalDate">Date of entry</label>
+                <input type="date" name="journalDate" id="journalDate">
+            </fieldset>
+            <!-- concepts covered input -->
+            <fieldset class="conceptsCoveredInput">
+                <label for="Concepts Covered">Concepts Covered Menu</label>
+                <input list="concepts">
+                <datalist id="concepts">
+                    <option value="HTML">
+                    <option value="CSS">
+                    <option value="JavaScript">
+                    <option value="Group Project">
+                    <option value="C#">
+                    <option value="OTHER">
+                </datalist>
+            </fieldset>
+            <!-- journal entry input -->
+            <fieldset class="journalEntryInput">
+                <label for="journalEntry">Journal Entry</label>
+                <textarea rows="4" cols="50">
                         </textarea>
-        </fieldset>
+            </fieldset>
 
-        <!-- mood for the day -->
-        <fieldset class="moodInput">
-            <label for="mood">Mood For the Day</label>
-            <select>
-                <option value="clover">
-                    <p style="font-size:100px">&#127808;</p>
-                </option>
-                <option value="peachy">
-                    <p style="font-size:100px">&#127825;</p>
-                </option>
-                <option value="bomb">
-                    <p style="font-size:100px">&#128163;</p>
-                </option>
-                <option value="rollercoaster">
-                    <p style="font-size:100px">&#127906;</p>
-                </option>
-                <option value="coffee">
-                    <p style="font-size:100px">&#9749;</p>
-                </option>
-                <option value="volcano">
-                    <p style="font-size:100px">&#127755;</p>
-                </option>
-                <option value="ambulance">
-                    <p style="font-size:100px">&#128657;</p>
-                </option>
-            </select>
-        </fieldset>
-    </form>
-    <button type="button">SUBMIT YOUR FEELINGS GIRL!</button>
+            <!-- mood for the day -->
+            <fieldset class="moodInput">
+                <label for="mood">Mood For the Day</label>
+                <select>
+                    <option value="clover">
+                        <p style="font-size:100px">&#127808;</p>
+                    </option>
+                    <option value="peachy">
+                        <p style="font-size:100px">&#127825;</p>
+                    </option>
+                    <option value="bomb">
+                        <p style="font-size:100px">&#128163;</p>
+                    </option>
+                    <option value="rollercoaster">
+                        <p style="font-size:100px">&#127906;</p>
+                    </option>
+                    <option value="coffee">
+                        <p style="font-size:100px">&#9749;</p>
+                    </option>
+                    <option value="volcano">
+                        <p style="font-size:100px">&#127755;</p>
+                    </option>
+                    <option value="ambulance">
+                        <p style="font-size:100px">&#128657;</p>
+                    </option>
+                </select>
+            </fieldset>
+        </form>
+
+        <button type="button">SUBMIT YOUR FEELINGS GIRL!</button>
+        <article class="entryLog">
+
+        </article>
     </section>
     <script src="scripts/journal.js"></script>
 </body>

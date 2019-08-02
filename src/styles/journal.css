@@ -2,7 +2,11 @@
 /* background image for body */
 .dailyJournal-body {
     background-image: url(beverage-blank-blank-space-414691\ \(2\).jpg);
+    font-family: 'Beth Ellen', cursive;
 }
+
+
+
 
 .dailyJournal-section {
     display: flex;
@@ -18,19 +22,23 @@
 .dateEntryInput {
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
 .conceptsCoveredInput {
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
 .journalEntryInput {
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
 .moodInput {
     display: flex;
     flex-direction: column;
+    border: none;
 }

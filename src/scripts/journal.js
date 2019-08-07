@@ -76,3 +76,61 @@ API.dailyJournalFetch().then(entries => {
     renderJournalEntries(entries)
 })
 
+
+// reference to form input elements
+const date = document.querySelector("#journalDate")
+const concept = document.querySelector("#concepts")
+const entry = document.querySelector("#journalEntry")
+const mood = document.querySelector("#mood")
+
+// function to make journal entry object from user inputs
+const createJournalEntry = (dateInput, conceptInput, entryInput, moodInput) => {
+    return {
+        dateOfEntry: dateInput.value,
+        titleOfEntry: conceptInput.value,
+        entryText: entryInput.value,
+        currentMood: moodInput.value
+    }
+}
+
+
+
+// add event listener to the submit button
+const submitEntryButton = document.querySelector("#submit")
+// event listener
+submitEntryButton.addEventListener("click", () => {
+    const journalEntry = createJournalEntry(date, concept, entry, mood)
+    // console.log(journalEntry)
+    saveJournalEntryAndReRender(journalEntry)
+
+    // const dateValue = date.value
+    // const conceptValue = concept.value
+    // const entryValue = entry.value
+    // const moodValue = mood.value
+    // const journalEntryObject = createEntryObjFromInput(dateValue, conceptValue, entryValue, moodValue)
+    // console.log(journalEntryObject) //still need to send journal entry object to database
+    // API.saveJournalEntry(journalEntryObject)
+})
+
+const validateJournalEntry = (journalEntry) => {
+    let isValid = true
+    if (journalEntry.dateOfEntry === "" 
+    || journalEntry.titleOfEntry === "" 
+    || journalEntry.entryText === "" 
+    || journalEntry.currentMood === "") {
+        alert("Please fill in all fields!")
+        isValid = false
+    }
+    if()
+    return isValid
+}
+
+
+
+const saveJournalEntryAndReRender = journalEntry => {
+    const isJournalEntryValid = validateJournalEntry(journalEntry)
+    if(isJournalEntryValid){
+        console.log("Saving Journal Entry!", journalEntry)
+        // API.saveJournalEntry(journalEntry)
+    }
+}

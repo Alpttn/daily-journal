@@ -22,28 +22,26 @@
             </fieldset>
             <!-- concepts covered input -->
             <fieldset class="conceptsCoveredInput">
-                <label for="Concepts Covered">Concepts Covered Menu</label>
-                <input list="concepts">
-                <datalist id="concepts">
-                    <option value="HTML">
-                    <option value="CSS">
-                    <option value="JavaScript">
-                    <option value="Group Project">
-                    <option value="C#">
-                    <option value="OTHER">
-                </datalist>
+                <label for="concepts">Concepts Covered Menu</label>
+                <select id="concepts">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Group Project">Group Project</option>
+                    <option value="C#">C#</option>
+                    <option value="OTHER">OTHER</option>
+                    </select>
             </fieldset>
             <!-- journal entry input -->
             <fieldset class="journalEntryInput">
                 <label for="journalEntry">Journal Entry</label>
-                <textarea rows="4" cols="50">
-                        </textarea>
+                <textarea id="journalEntry" rows="4" cols="50"></textarea>
             </fieldset>
 
             <!-- mood for the day -->
             <fieldset class="moodInput">
                 <label for="mood">Mood For the Day</label>
-                <select>
+                <select id="mood">
                     <option value="clover">
                         <p style="font-size:100px">&#127808;Lucky</p>
                     </option>
@@ -69,7 +67,7 @@
             </fieldset>
         </form>
 
-        <button type="button">SUBMIT YOUR FEELINGS GIRL!</button>
+        <button type="button" id="submit">SUBMIT YOUR FEELINGS GIRL!</button>
         <article class="entryLog">
 
         </article>

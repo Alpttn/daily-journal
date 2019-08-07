@@ -1,23 +1,39 @@
 {
-    "entries": [
-        {
-            "dateOfEntry": "July 14, 2019 11:13:00",
-            "titleOfEntry": "JavaScript",
-            "entryText": "This is a test entry",
-            "currentMood": "clover"
-        },
-        {
-            "dateOfEntry": "July 13, 2019 11:13:00",
-            "titleOfEntry": "html",
-            "entryText": "Today I studied basic html structure",
-            "currentMood": "peachy"
-        },
-        {
-            "dateOfEntry": "July 12, 2019 11:13:00",
-            "titleOfEntry": "CSS",
-            "entryText": "Today I looked up some sample color templates",
-            "currentMood": "coffee"
-        }
-    ]
-
+  "entries": [
+    {
+      "id": 1,
+      "dateOfEntry": "July 14, 2019 11:13:00",
+      "titleOfEntry": "JavaScript",
+      "entryText": "This is a test entry",
+      "currentMood": "clover"
+    },
+    {
+      "id": 2,
+      "dateOfEntry": "July 13, 2019 11:13:00",
+      "titleOfEntry": "html",
+      "entryText": "Today I studied basic html structure",
+      "currentMood": "peachy"
+    },
+    {
+      "id": 3,
+      "dateOfEntry": "July 12, 2019 11:13:00",
+      "titleOfEntry": "CSS",
+      "entryText": "Today I looked up some sample color templates",
+      "currentMood": "coffee"
+    },
+    {
+      "dateOfEntry": "2019-08-06",
+      "titleOfEntry": "HTML",
+      "entryText": "hi",
+      "currentMood": "clover",
+      "id": 4
+    },
+    {
+      "dateOfEntry": "2019-08-06",
+      "titleOfEntry": "HTML",
+      "entryText": "hi",
+      "currentMood": "clover",
+      "id": 5
+    }
+  ]
 }

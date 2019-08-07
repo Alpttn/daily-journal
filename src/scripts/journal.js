@@ -114,14 +114,24 @@ submitEntryButton.addEventListener("click", () => {
 
 const validateJournalEntry = (journalEntry) => {
     let isValid = true
-    if (journalEntry.dateOfEntry === "" 
-    || journalEntry.titleOfEntry === "" 
-    || journalEntry.entryText === "" 
-    || journalEntry.currentMood === "") {
+    if (journalEntry.dateOfEntry === ""
+        || journalEntry.titleOfEntry === ""
+        || journalEntry.entryText === ""
+        || journalEntry.currentMood === "") {
         alert("Please fill in all fields!")
         isValid = false
     }
-    if()
+
+    // we used test to search the characters we didn't allow and fed through my journal entry text
+    // you need the brackets before the characters
+    const notAllowedChars = /[\#\$\%\^\&\*\+\=\@\~\<\>\-\_]/;
+    const regEx = notAllowedChars.test(journalEntry.entryText)
+    console.log('regEx: ', regEx);
+
+    if (regEx === true) {
+        alert("You have typed an invalid character")
+    }
+
     return isValid
 }
 
@@ -129,7 +139,7 @@ const validateJournalEntry = (journalEntry) => {
 
 const saveJournalEntryAndReRender = journalEntry => {
     const isJournalEntryValid = validateJournalEntry(journalEntry)
-    if(isJournalEntryValid){
+    if (isJournalEntryValid) {
         console.log("Saving Journal Entry!", journalEntry)
         // API.saveJournalEntry(journalEntry)
     }

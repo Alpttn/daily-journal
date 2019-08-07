@@ -131,7 +131,14 @@ const validateJournalEntry = (journalEntry) => {
     if (regEx === true) {
         alert("You have typed an invalid character")
     }
+    // how to validate for curse words
+    const curseWords = /^((?!fuck).)*$/gm
+    const regExCurseWords = curseWords.test(journalEntry.entryText)
+    console.log('regExCurseWords: ', regExCurseWords);
 
+    if (regExCurseWords === false) {
+        alert("tisk tisk, no foul language. Please be kind, be a light, respect mother nature, namaste")
+    }
     return isValid
 }
 

@@ -30,7 +30,7 @@
                     <option value="Group Project">Group Project</option>
                     <option value="C#">C#</option>
                     <option value="OTHER">OTHER</option>
-                    </select>
+                </select>
             </fieldset>
             <!-- journal entry input -->
             <fieldset class="journalEntryInput">
@@ -48,17 +48,9 @@
                     <option value="peachy">
                         <p style="font-size:100px">&#127825;Peachy</p>
                     </option>
-                    <option value="bomb">
-                        <p style="font-size:100px">&#128163;The Bomb</p>
-                    </option>
-                    <option value="rollercoaster">
-                        <p style="font-size:100px">&#127906;Emotional Rollercoaster</p>
-                    </option>
                     <option value="coffee">
                         <p style="font-size:100px">&#9749;Need Coffee</p>
                     </option>
-                    <option value="volcano">
-                        <p style="font-size:100px">&#127755;About to Erupt</p>
                     </option>
                     <option value="ambulance">
                         <p style="font-size:100px">&#128657;Dying</p>
@@ -66,8 +58,22 @@
                 </select>
             </fieldset>
         </form>
-
+<!-- added submit button to capture data -->
         <button type="button" id="submit">SUBMIT YOUR FEELINGS GIRL!</button>
+
+        <!-- created container for mood filtering radio buttons -->
+        <fieldset id="moodContainer">
+            <legend>Display Journal Entry by Mood</legend>
+            <input type="radio" id="clover" name="radioMood" value="clover">
+            <label for="clover">Lucky</label>
+            <input type="radio" id="peachy" name="radioMood" value="peachy">
+            <label for="peachy">Peachy</label>
+            <input type="radio" id="coffee" name="radioMood" value="coffee">
+            <label for="coffee">Needs Coffee</label>
+            <input type="radio" id="ambulance" name="radioMood" value="ambulance">
+            <label for="ambulance">Dying</label>
+        </fieldset>
+
         <article class="entryLog">
 
         </article>

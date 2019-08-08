@@ -42,17 +42,17 @@
             <fieldset class="moodInput">
                 <label for="mood">Mood For the Day</label>
                 <select id="mood">
-                    <option value="clover">
+                    <option value="lucky">
                         <p style="font-size:100px">&#127808;Lucky</p>
                     </option>
                     <option value="peachy">
                         <p style="font-size:100px">&#127825;Peachy</p>
                     </option>
-                    <option value="coffee">
-                        <p style="font-size:100px">&#9749;Need Coffee</p>
+                    <option value="needs coffee">
+                        <p style="font-size:100px">&#9749;Needs coffee</p>
                     </option>
                     </option>
-                    <option value="ambulance">
+                    <option value="dying">
                         <p style="font-size:100px">&#128657;Dying</p>
                     </option>
                 </select>
@@ -64,14 +64,14 @@
         <!-- created container for mood filtering radio buttons -->
         <fieldset id="moodContainer">
             <legend>Display Journal Entry by Mood</legend>
-            <input type="radio" id="clover" name="radioMood" value="clover">
-            <label for="clover">Lucky</label>
-            <input type="radio" id="peachy" name="radioMood" value="peachy">
+            <input class="radioMood" type="radio" id="lucky" name="radioMood" value="lucky">
+            <label for="lucky">Lucky</label>
+            <input class="radioMood" type="radio" id="peachy" name="radioMood" value="peachy">
             <label for="peachy">Peachy</label>
-            <input type="radio" id="coffee" name="radioMood" value="coffee">
-            <label for="coffee">Needs Coffee</label>
-            <input type="radio" id="ambulance" name="radioMood" value="ambulance">
-            <label for="ambulance">Dying</label>
+            <input class="radioMood" type="radio" id="needs coffee" name="radioMood" value="needs coffee">
+            <label for="needs coffee">Needs coffee</label>
+            <input class="radioMood" type="radio" id="dying" name="radioMood" value="dying">
+            <label for="dying">Dying</label>
         </fieldset>
 
         <article class="entryLog">

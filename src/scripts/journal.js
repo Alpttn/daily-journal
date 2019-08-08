@@ -112,6 +112,8 @@ submitEntryButton.addEventListener("click", () => {
     // API.saveJournalEntry(journalEntryObject)
 })
 
+
+// validate the form input fields by blank spaces and curse words
 const validateJournalEntry = (journalEntry) => {
     let isValid = true
     if (journalEntry.dateOfEntry === ""
@@ -143,7 +145,7 @@ const validateJournalEntry = (journalEntry) => {
 }
 
 
-
+// how to save the journal entry
 const saveJournalEntryAndReRender = journalEntry => {
     const isJournalEntryValid = validateJournalEntry(journalEntry)
     if (isJournalEntryValid) {
@@ -151,3 +153,28 @@ const saveJournalEntryAndReRender = journalEntry => {
         // API.saveJournalEntry(journalEntry)
     }
 }
+
+// making an event listener for the radio button container to target each button
+// then clear out the container and render the filtered data to the DOM
+const moodContainer = document.querySelector("#moodContainer")
+const entryLog = document.querySelector(".entryLog")
+
+moodContainer.addEventListener("click", e => {
+    if (e.target.className.includes("radioMood")) {
+
+        const mood = e.target.value
+        entryLog.innerHTML = ""
+        console.log("hi")
+        API.filterEntryMood(mood).then(filteredData => {
+            console.log('filteredData: ', filteredData);
+
+            filteredData.forEach(moodObj => {
+                console.log('moodObj: ', moodObj);
+                 const htmlRepObj = makeJournalEntryComponent(
+                    moodObj
+                    );
+                    entryLog.innerHTML += htmlRepObj
+            });
+        })
+    }
+})

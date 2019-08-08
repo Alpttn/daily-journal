@@ -5,7 +5,7 @@
       "dateOfEntry": "July 14, 2019 11:13:00",
       "titleOfEntry": "JavaScript",
       "entryText": "This is a test entry",
-      "currentMood": "clover"
+      "currentMood": "lucky"
     },
     {
       "id": 2,
@@ -19,20 +19,20 @@
       "dateOfEntry": "July 12, 2019 11:13:00",
       "titleOfEntry": "CSS",
       "entryText": "Today I looked up some sample color templates",
-      "currentMood": "coffee"
+      "currentMood": "needs coffee"
     },
     {
       "dateOfEntry": "2019-08-06",
       "titleOfEntry": "HTML",
       "entryText": "hi",
-      "currentMood": "clover",
+      "currentMood": "lucky",
       "id": 4
     },
     {
       "dateOfEntry": "2019-08-06",
       "titleOfEntry": "HTML",
       "entryText": "hi",
-      "currentMood": "clover",
+      "currentMood": "lucky",
       "id": 5
     }
   ]

@@ -1,3 +1,5 @@
+import makeJournalEntryComponent from "./entryComponent.js"
+
 const renderJournalEntries = (entries) => {
     entries.forEach(journalEntry => {
        const journalEntryComponent = makeJournalEntryComponent(journalEntry);
@@ -5,3 +7,5 @@ const renderJournalEntries = (entries) => {
        whereToPlaceIt.innerHTML += journalEntryComponent
    });
 }
+
+export default renderJournalEntries

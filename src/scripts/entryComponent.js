@@ -10,3 +10,5 @@ const makeJournalEntryComponent = (journalEntry) => {
     </section>
     `
 }
+
+export default makeJournalEntryComponent

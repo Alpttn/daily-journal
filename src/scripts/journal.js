@@ -17,7 +17,15 @@ const date = document.querySelector("#journalDate")
 const concept = document.querySelector("#concepts")
 const entry = document.querySelector("#journalEntry")
 const mood = document.querySelector("#mood")
-
+const hiddenEntryIdInput = document.querySelector("#entryId")
+// resets the form fields
+const resetFormFields = () => {
+    date.value = ""
+    concept.value = ""
+    entry.value = ""
+    mood.value = ""
+    hiddenEntryIdInput.value = ""
+}
 // function to make journal entry object from user inputs
 const createJournalEntry = (dateInput, conceptInput, entryInput, moodInput) => {
     return {
@@ -36,17 +44,14 @@ const submitEntryButton = document.querySelector("#submit")
 submitEntryButton.addEventListener("click", () => {
     const journalEntry = createJournalEntry(date, concept, entry, mood)
     // console.log(journalEntry)
-    saveJournalEntryAndReRender(journalEntry)
-        
-    // const dateValue = date.value
-    // const conceptValue = concept.value
-    // const entryValue = entry.value
-    // const moodValue = mood.value
-    // const journalEntryObject = createEntryObjFromInput(dateValue, conceptValue, entryValue, moodValue)
-    // console.log(journalEntryObject) //still need to send journal entry object to database
-    // API.saveJournalEntry(journalEntryObject)
+    // add logic here to test if the user is editing
+    if (hiddenEntryIdInput.value !== "") {
+        editJournalEntry(journalEntry, hiddenEntryIdInput.value) //need to write this function
+    } else {
+        // Save functionality goes here
+        saveJournalEntryAndReRender(journalEntry)
+    }
 })
-
 
 // validate the form input fields by blank spaces and curse words
 const validateJournalEntry = (journalEntry) => {
@@ -88,6 +93,19 @@ const saveJournalEntryAndReRender = journalEntry => {
         API.saveJournalEntry(journalEntry)
             .then(API.dailyJournalFetch)
             .then(renderJournalEntries)
+
+        resetFormFields()
+    }
+}
+// edit journal entry
+const editJournalEntry = (journalEntry, entryId) => {
+    const isJournalEntryValid = validateJournalEntry(journalEntry)
+    if (isJournalEntryValid) {
+        API.editJournalEntry(journalEntry, entryId)
+            .then(API.dailyJournalFetch)
+            .then(renderJournalEntries)
+
+        resetFormFields()
     }
 }
 
@@ -107,15 +125,14 @@ moodContainer.addEventListener("click", e => {
 
             filteredData.forEach(moodObj => {
                 console.log('moodObj: ', moodObj);
-                 const htmlRepObj = makeJournalEntryComponent(
+                const htmlRepObj = makeJournalEntryComponent(
                     moodObj
-                    );
-                    entryLog.innerHTML += htmlRepObj
+                );
+                entryLog.innerHTML += htmlRepObj
             });
         })
     }
 })
-
 
 
 // make eventlistener for delete button
@@ -133,3 +150,36 @@ const registerDeleteListener = () => {
     })
 }
 registerDeleteListener()
+
+// event listener to edit 
+entryLog.addEventListener("click", event => {
+    if (event.target.id.startsWith("editEntry--")) {
+        const entryIdToEdit = event.target.id.split("--")[1]
+
+        /*
+            This function will get the recipe from the API
+            and populate the form fields (see below)
+        */
+        updateFormFields(entryIdToEdit)
+    }
+})
+
+// code to update the form fields
+const updateFormFields = entryId => {
+    // got reference to input fields previously and will use them below added hidden
+    fetch(`http://localhost:3000/entries/${entryId}`)
+        .then(response => response.json())
+        .then(journalEntry => {
+            console.log('entry: ', entry);
+            /*
+                Now that you KNOW you have the data, render
+                an editing form that represents the current
+                state of the resource.
+            */
+            hiddenEntryIdInput.value = journalEntry.id
+            date.value = journalEntry.dateOfEntry
+            concept.value = journalEntry.titleOfEntry
+            entry.value = journalEntry.entryText
+            mood.value = journalEntry.currentMood
+        })
+}

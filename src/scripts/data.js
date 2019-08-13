@@ -32,6 +32,19 @@ const API = {
         })
             .then(response => response.json())
     },
+
+    editJournalEntry(journalEntry, entryId) {
+        //    const entryBody = JSON.stringify(newJournalEntry)
+        //    console.log(entryBody)
+        return fetch(`http://localhost:3000/entries/${entryId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(journalEntry)
+        })
+            .then(response => response.json())
+    },
 }
 
 export default API

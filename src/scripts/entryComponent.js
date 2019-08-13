@@ -7,6 +7,9 @@ const makeJournalEntryComponent = (journalEntry) => {
     <button id="deleteEntry--${journalEntry.id}">
         Delete Entry
     </button>
+    <button id="editEntry--${journalEntry.id}">
+        Edit Entry
+    </button>
     </section>
     `
 }

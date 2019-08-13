@@ -15,6 +15,8 @@
         <h1 class="header-dailyJournal">Daily Journal</h1>
 
         <form action="" class="dailyJournal-form">
+            <!-- hidden input form -->
+            <input type="hidden" id="entryId" value="" />
             <!-- date entry -->
             <fieldset class="dateEntryInput">
                 <label for="journalDate">Date of entry</label>
@@ -58,7 +60,7 @@
                 </select>
             </fieldset>
         </form>
-<!-- added submit button to capture data -->
+        <!-- added submit button to capture data -->
         <button type="button" id="submit">SUBMIT YOUR FEELINGS GIRL!</button>
 
         <!-- created container for mood filtering radio buttons -->
@@ -78,7 +80,7 @@
 
         </article>
     </section>
-    
+
     <script type="module" src="scripts/journal.js"></script>
 </body>
 

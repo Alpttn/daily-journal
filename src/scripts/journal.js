@@ -6,7 +6,7 @@ import makeJournalEntryComponent from "./entryComponent.js"
 
 
 
-
+// Fetch and render journal entries
 API.dailyJournalFetch().then(entries => {
     renderJournalEntries(entries)
 })
@@ -37,7 +37,7 @@ submitEntryButton.addEventListener("click", () => {
     const journalEntry = createJournalEntry(date, concept, entry, mood)
     // console.log(journalEntry)
     saveJournalEntryAndReRender(journalEntry)
-
+        
     // const dateValue = date.value
     // const conceptValue = concept.value
     // const entryValue = entry.value
@@ -85,7 +85,9 @@ const saveJournalEntryAndReRender = journalEntry => {
     const isJournalEntryValid = validateJournalEntry(journalEntry)
     if (isJournalEntryValid) {
         console.log("Saving Journal Entry!", journalEntry)
-        // API.saveJournalEntry(journalEntry)
+        API.saveJournalEntry(journalEntry)
+            .then(API.dailyJournalFetch)
+            .then(renderJournalEntries)
     }
 }
 
@@ -113,3 +115,21 @@ moodContainer.addEventListener("click", e => {
         })
     }
 })
+
+
+
+// make eventlistener for delete button
+const registerDeleteListener = () => {
+    entryLog.addEventListener("click", event => {
+        if (event.target.id.startsWith("deleteEntry--")) {
+            // Extract entry id from the button's id attribute
+            const entryId = event.target.id.split("--")[1]
+
+            // Invoke the delete method, then get all recipes and render them
+            API.deleteJournalEntry(entryId)
+                .then(API.dailyJournalFetch)
+                .then(renderJournalEntries)
+        }
+    })
+}
+registerDeleteListener()

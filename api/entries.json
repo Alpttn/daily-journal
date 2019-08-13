@@ -34,6 +34,27 @@
       "entryText": "hi",
       "currentMood": "lucky",
       "id": 5
+    },
+    {
+      "dateOfEntry": "2019-08-12",
+      "titleOfEntry": "C#",
+      "entryText": "I need PHil",
+      "currentMood": "dying",
+      "id": 6
+    },
+    {
+      "dateOfEntry": "2019-08-12",
+      "titleOfEntry": "JavaScript",
+      "entryText": "testing",
+      "currentMood": "lucky",
+      "id": 7
+    },
+    {
+      "dateOfEntry": "2019-08-12",
+      "titleOfEntry": "OTHER",
+      "entryText": "hello test 66",
+      "currentMood": "needs coffee",
+      "id": 8
     }
   ]
 }

@@ -8,7 +8,7 @@ const API = {
     saveJournalEntry(newJournalEntry) {
         //    const entryBody = JSON.stringify(newJournalEntry)
         //    console.log(entryBody)
-        fetch("http://localhost:3000/entries", {
+        return fetch("http://localhost:3000/entries", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -16,13 +16,22 @@ const API = {
             body: JSON.stringify(newJournalEntry)
         })
             .then(response => response.json()) //the object that was just created
-    }, 
+    },
+
     filterEntryMood(radioValue) { //created function inside of API to query data from fetch then parse then return
         return fetch(
             `http://localhost:3000/entries?currentMood=${radioValue}`
         ).then(entries => entries.json());
-    }
+    },
 
+    deleteJournalEntry(entryId) {
+        //    const entryBody = JSON.stringify(newJournalEntry)
+        //    console.log(entryBody)
+        return fetch(`http://localhost:3000/entries/${entryId}`, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+    },
 }
 
 export default API
